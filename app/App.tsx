@@ -1,11 +1,11 @@
 import { ReactElement } from 'react';
-import { Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { FilmsList } from '../modules/films-list/screens/films-list';
 
 export function App(): ReactElement {
   return (
     <SafeAreaView>
-      <Text>123</Text>
+      <FilmsList />
     </SafeAreaView>
   );
 }
