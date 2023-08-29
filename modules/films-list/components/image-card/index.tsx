@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Image, View, Text, StyleSheet, Dimensions } from 'react-native';
+import { Image, View, Text } from 'react-native';
 
 import { imageCardStyles as styles } from './styles';
 import { Film } from '../../types/api-dtos';
@@ -9,12 +9,12 @@ type Props = {
 };
 
 export function ImageCard({ data }: Props): ReactElement {
-  const { image, name } = data;
+  const { poster, name } = data;
 
   return (
     <View style={styles.container}>
       <View style={styles.sub}>
-        <Image style={styles.cover} source={{ uri: image }} />
+        <Image style={styles.cover} source={{ uri: poster.previewUrl }} />
       </View>
       <Text style={styles.h1}>{name.toUpperCase()}</Text>
     </View>

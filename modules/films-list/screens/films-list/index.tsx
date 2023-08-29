@@ -10,8 +10,7 @@ export function FilmsList(): ReactElement {
 
   useEffect(() => {
     filmsApi.getFilms().then((res) => {
-      setData(res);
-      console.log(res);
+      setData(res.data.docs);
     });
   }, []);
   return (

@@ -1,12 +1,8 @@
-class FilmsApi {
-  async getFilms() {
-    try {
-      const response = await fetch('https://leelachakra.com/resource/stargate/data.json');
-      return await response.json();
-    } catch (e) {
-      console.log(e);
-    }
-  }
-}
+import { commonInstance } from '../../shared/api/common-instance';
+import { Film } from '../types/api-dtos';
 
-export const filmsApi = new FilmsApi();
+export const filmsApi = {
+  getFilms() {
+    return commonInstance.get<{ docs: Film[] }>('v1.3/movie', { params: { enName: 'Stargate' } });
+  },
+};

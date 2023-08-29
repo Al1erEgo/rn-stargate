@@ -4,7 +4,7 @@ import { FilmsList } from '../modules/films-list/screens/films-list';
 
 export function App(): ReactElement {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <FilmsList />
     </SafeAreaView>
   );

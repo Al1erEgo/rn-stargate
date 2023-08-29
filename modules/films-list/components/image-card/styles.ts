@@ -4,6 +4,7 @@ const w = Dimensions.get('window').width;
 export const imageCardStyles = StyleSheet.create({
   container: {
     width: w / 2.4,
+    height: w * 0.63 + 70,
     top: 20,
   },
   sub: {
