@@ -8,7 +8,7 @@ type Props = {
   data: Film;
 };
 
-export function ImageCard({ data }: Props): ReactElement {
+export function FilmCard({ data }: Props): ReactElement {
   const { poster, name } = data;
 
   return (

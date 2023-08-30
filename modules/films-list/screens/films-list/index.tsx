@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
-import { ImageCard } from '../../components/image-card';
+import { FilmCard } from '../../components/film-card';
 import { filmsApi } from '../../api/films-api';
 import { Header } from '../../../shared/components/header';
 import { Film } from '../../types/api-dtos';
@@ -19,7 +19,7 @@ export function FilmsList(): ReactElement {
       columnWrapperStyle={{ justifyContent: 'space-around' }}
       numColumns={2}
       data={data}
-      renderItem={({ item }) => <ImageCard data={item} />}
+      renderItem={({ item }) => <FilmCard data={item} />}
       keyExtractor={(item) => item.id.toString()}
     />
   );
