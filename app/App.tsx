@@ -5,8 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FilmDetails } from '../modules/films-list/screens/film-details';
+import { RootStackParamList } from '../modules/shared/types/navigation';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 export function App(): ReactElement {
   return (

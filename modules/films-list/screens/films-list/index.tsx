@@ -1,11 +1,15 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Pressable } from 'react-native';
 import { FilmCard } from '../../components/film-card';
 import { filmsApi } from '../../api/films-api';
 import { Header } from '../../../shared/components/header';
 import { Film } from '../../types/api-dtos';
+import { NativeStackScreenProps } from 'react-native-screens/native-stack';
+import { RootStackParamList } from '../../../shared/types/navigation';
 
-export function FilmsList(): ReactElement {
+export function FilmsList({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList, 'FilmsList'>): ReactElement {
   const [data, setData] = useState<Film[]>();
 
   useEffect(() => {
@@ -19,7 +23,11 @@ export function FilmsList(): ReactElement {
       columnWrapperStyle={{ justifyContent: 'space-around' }}
       numColumns={2}
       data={data}
-      renderItem={({ item }) => <FilmCard data={item} />}
+      renderItem={({ item }) => (
+        <Pressable onPress={() => navigation.navigate('FilmDetails')}>
+          <FilmCard data={item} />
+        </Pressable>
+      )}
       keyExtractor={(item) => item.id.toString()}
     />
   );
