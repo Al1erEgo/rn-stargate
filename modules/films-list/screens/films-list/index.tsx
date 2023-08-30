@@ -4,12 +4,8 @@ import { FilmCard } from '../../components/film-card';
 import { filmsApi } from '../../api/films-api';
 import { Header } from '../../../shared/components/header';
 import { Film } from '../../types/api-dtos';
-import { NativeStackScreenProps } from 'react-native-screens/native-stack';
-import { RootStackParamList } from '../../../shared/types/navigation';
 
-export function FilmsList({
-  navigation,
-}: NativeStackScreenProps<RootStackParamList, 'FilmsList'>): ReactElement {
+export function FilmsList(): ReactElement {
   const [data, setData] = useState<Film[]>();
 
   useEffect(() => {
@@ -23,11 +19,7 @@ export function FilmsList({
       columnWrapperStyle={{ justifyContent: 'space-around' }}
       numColumns={2}
       data={data}
-      renderItem={({ item }) => (
-        <Pressable onPress={() => navigation.navigate('FilmDetails')}>
-          <FilmCard data={item} />
-        </Pressable>
-      )}
+      renderItem={({ item }) => <FilmCard data={item} />}
       keyExtractor={(item) => item.id.toString()}
     />
   );

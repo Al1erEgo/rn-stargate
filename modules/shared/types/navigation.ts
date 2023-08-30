@@ -1,6 +1,4 @@
 export type RootStackParamList = {
   FilmsList: undefined;
-  FilmDetails: undefined;
+  FilmDetails: { id: number };
 };
-
-export interface RootParamList extends RootStackParamList {}
