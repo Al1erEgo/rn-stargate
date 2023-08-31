@@ -57,7 +57,6 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'multiline-block-like' }
     ],
     '@typescript-eslint/no-use-before-define': ['warn', { variables: false }],
-    '@typescript-eslint/lines-between-class-members': ['warn', { exceptAfterSingleLine: true }],
     '@typescript-eslint/no-inferrable-types': ['warn', { ignoreParameters: true }],
     '@typescript-eslint/explicit-module-boundary-types': ['warn', { allowArgumentsExplicitlyTypedAsAny: true }],
     '@typescript-eslint/no-explicit-any': 'off',
