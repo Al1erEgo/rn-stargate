@@ -17,7 +17,7 @@ export function App(): ReactElement {
         <Stack.Navigator
           initialRouteName='FilmsList'
           screenOptions={{
-            header: ({ route }) => <Header title={route.name} />
+            header: (props) => <Header {...props} />
           }}>
           <Stack.Screen name='FilmsList' component={FilmsList} />
           <Stack.Screen

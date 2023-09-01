@@ -1,18 +1,16 @@
+import { StackHeaderProps } from '@react-navigation/stack';
 import { ReactElement } from 'react';
 import { Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { headerStyles as styles } from './styles';
 
-type Props = {
-  title: string;
-};
+type Props = StackHeaderProps;
 
-export function Header({ title }: Props): ReactElement {
+export function Header({ options, route }: Props): ReactElement {
+  console.log(options);
+
   return (
-    <SafeAreaView>
-      <View style={styles.viewStyle}>
-        <Text style={styles.textStyle}>{title}</Text>
-      </View>
-    </SafeAreaView>
+    <View style={styles.viewStyle}>
+      <Text style={styles.textStyle}>{options.title}</Text>
+    </View>
   );
 }
