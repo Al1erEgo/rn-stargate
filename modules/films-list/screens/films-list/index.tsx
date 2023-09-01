@@ -1,21 +1,20 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { FlatList, Pressable } from 'react-native';
-import { FilmCard } from '../../components/film-card';
+import { FlatList } from 'react-native';
 import { filmsApi } from '../../api/films-api';
-import { Header } from '../../../shared/components/header';
+import { FilmCard } from '../../components/film-card';
 import { Film } from '../../types/api-dtos';
 
 export function FilmsList(): ReactElement {
-  const [data, setData] = useState<Film[]>();
+  const [data, setData] = useState<Array<Film>>();
 
   useEffect(() => {
     filmsApi.getFilms().then((res) => {
       setData(res.data.docs);
     });
   }, []);
+
   return (
     <FlatList
-      ListHeaderComponent={<Header title="STAR GATE" />}
       columnWrapperStyle={{ justifyContent: 'space-around' }}
       numColumns={2}
       data={data}

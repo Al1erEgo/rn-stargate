@@ -1,4 +1,7 @@
 export type RootStackParamList = {
   FilmsList: undefined;
-  FilmDetails: { id: number };
+  FilmDetails: {
+    name: string;
+    id: number;
+  };
 };
