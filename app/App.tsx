@@ -5,6 +5,7 @@ import { FilmsList } from '../modules/films-list/screens/films-list';
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FilmDetails } from '../modules/films-list/screens/film-details';
+import { Header } from '../modules/shared/components/header';
 import { RootStackParamList } from '../modules/shared/types/navigation';
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -16,15 +17,13 @@ export function App(): ReactElement {
         <Stack.Navigator
           initialRouteName='FilmsList'
           screenOptions={{
-            title: 'Films List',
-            headerStyle: { backgroundColor: '#f4511e' },
-            headerTintColor: '#fff'
+            header: ({ route }) => <Header title={route.name} />
           }}>
           <Stack.Screen name='FilmsList' component={FilmsList} />
           <Stack.Screen
             name='FilmDetails'
             component={FilmDetails}
-            options={({ route }) => ({ title: route.params.name })}
+            options={({ route }) => ({ title: route.name })}
           />
         </Stack.Navigator>
       </NavigationContainer>
