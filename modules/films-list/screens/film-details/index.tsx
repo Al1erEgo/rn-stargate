@@ -10,6 +10,13 @@ export function FilmDetails({
   const { id } = route.params;
   console.log(route);
 
+  //работает если нативный хэдер рисуется
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerRight: () => <Button title='H' onPress={() => navigation.navigate('FilmsList')} />
+  //   });
+  // }, [navigation]);
+
   return (
     <>
       <Text>Film Details</Text>
